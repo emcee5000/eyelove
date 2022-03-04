@@ -447,7 +447,7 @@ p {
 # Hero
 --------------------------------------------------------------*/
 #hero {
-  background: url("../img/home-bg-august.jpg") repeat scroll center center/cover;
+  background: url("../img/home-bg2.jpg") repeat scroll center center/cover;
   height: 100vh;
   width: 100%;
 }
@@ -474,7 +474,7 @@ p {
   font-weight: 700;
   margin-bottom: 10px;
   text-transform: uppercase;
-  color: #000;
+  color: #fff;
 }
 
 
@@ -494,7 +494,7 @@ p {
 }
 
 .hero-content .list-social li i {
-  color: #000;
+  color: #fff;
   font-size: 2em;
 }
 .social-icons {
@@ -1262,7 +1262,7 @@ blockquote {
   }
   #about .div-img-bg .about-img img {
     margin-top: 0%;
-    margin-left: calc(0% - 0px);
+    /* margin-left: calc(0% - 0px); */
   }
   #about .about-descr .p-heading {
     font-size: 20px;
@@ -1332,7 +1332,7 @@ blockquote {
   }
   #about .div-img-bg .about-img img {
     margin-top: 0%;
-    margin-left: calc(0% - 0px);
+    /* margin-left: calc(0% - 0px); */
   }
   #about .about-descr .p-heading {
     font-size: 20px;
@@ -1409,7 +1409,11 @@ blockquote {
   }
   #about .div-img-bg .about-img img {
     margin-top: 0%;
-    margin-left: calc(0% - 0px);
+    /* margin-left: calc(0% - 0px); */
+  }
+  .about-descr
+  {
+    padding-top: 1em;
   }
   #about .about-descr .p-heading {
     font-size: 20px;
@@ -1478,13 +1482,15 @@ blockquote {
   }
   #about .div-img-bg .about-img img {
     margin-top: 0%;
-    margin-left: calc(0% - 0px);
+    /* margin-left: calc(0% - 0px); */
+    width: 100%;
   }
   #about .about-descr .p-heading {
     font-size: 20px;
   }
   #about .about-descr .separator {
     max-width: 100%;
+    margin-top: 1em;
     margin-bottom: 0;
   }
   /* portfolio */
