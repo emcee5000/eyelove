@@ -482,6 +482,12 @@ p a {
   color: #000;
 }
 
+/* Media query for mobile devices
+@media (max-width: 768px) {
+  .hero-content h2 {
+    color: white;
+  }
+} */
 
 .hero-content p {
   font-size: 13px;
