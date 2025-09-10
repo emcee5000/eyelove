@@ -107,7 +107,7 @@ p a {
 }
 
 .book-appointment-container {
-  height: 1200px;
+  height: 800px;
   display: block;
 }
 .section-title {
@@ -451,7 +451,7 @@ p a {
 # Hero
 --------------------------------------------------------------*/
 #hero {
-  background: url("../img/home-bg3.jpg") repeat scroll center center/cover;
+  background: url("../img/home-bg-3.jpg") repeat scroll center center/cover;
   height: 100vh;
   width: 100%;
 }
@@ -482,6 +482,12 @@ p a {
   color: #000;
 }
 
+/* Media query for mobile devices
+@media (max-width: 768px) {
+  .hero-content h2 {
+    color: white;
+  }
+} */
 
 .hero-content p {
   font-size: 13px;
