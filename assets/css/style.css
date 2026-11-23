@@ -108,8 +108,17 @@ p a {
 }
 
 .book-appointment-container {
-  height: 800px;
+  height: 640px;
   display: block;
+  overflow: hidden;
+}
+
+/* Square's booking iframe repeats our logo and adds its own menu in a ~60px
+   header bar. The iframe is cross-origin, so we can't style inside it;
+   instead shift it up and let the container clip that bar off. */
+.book-appointment-container iframe {
+  margin-top: -60px;
+  height: calc(100% + 60px) !important;
 }
 
 /* How It Works page */
@@ -152,7 +161,7 @@ p a {
   color: #292929;
 }
 .section-title {
-  margin-bottom: 70px;
+  margin-bottom: 45px;
 }
 
 .section-title h1,
@@ -183,8 +192,8 @@ p a {
 }
 
 .paddsection {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .paddsections {
@@ -1636,5 +1645,33 @@ blockquote {
     line-height: 1.4;
     padding: 14px 28px;
     white-space: normal;
+  }
+}
+
+/* Tighter vertical rhythm on phones */
+@media (max-width: 767px) {
+  .paddsection {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .section-title {
+    margin-bottom: 30px;
+  }
+
+  .step {
+    margin-bottom: 35px;
+  }
+
+  .page-photo {
+    margin-bottom: 35px;
+  }
+
+  .faq-item {
+    margin-bottom: 25px;
+  }
+
+  .book-appointment-container {
+    height: 760px;
   }
 }
