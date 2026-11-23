@@ -61,7 +61,7 @@
   "@type": "Optician",
   "@id": "https://eyeloveboutique.com/#business",
   "name": "Eye Love Optical Boutique",
-  "description": "Optical boutique in Cazenovia, NY with New York State-licensed opticians, offering handcrafted independent eyewear, premium prescription lenses and coatings, and personal styling.",
+  "description": "Optical boutique in Cazenovia, NY with New York State-licensed opticians, offering handcrafted independent eyewear, premium prescription lenses and coatings, and personal styling. Open Tuesday through Friday, Saturdays by appointment.",
   "url": "https://eyeloveboutique.com/",
   "logo": "https://eyeloveboutique.com/assets/img/logo-large-bk.png",
   "image": [
@@ -155,6 +155,57 @@
         "name": "New York State Education Department"
       }
     }
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=65+Albany+Street+Cazenovia+NY+13035",
+  "knowsAbout": [
+    "Prescription eyeglasses",
+    "Designer eyewear",
+    "Independent eyewear brands",
+    "Sunglasses",
+    "Anti-reflective lens coatings",
+    "Transitions lenses",
+    "Eyeglass frame fitting",
+    "Kids' eyeglasses",
+    "Reading glasses"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Frame consultation",
+        "description": "One-on-one, hour-long frame styling session with a New York State-licensed optician."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Prescription eyeglasses",
+        "description": "Prescriptions filled with premium lenses and coatings. We can request your prescription from your eye doctor."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Frame adjustments",
+        "description": "Free frame adjustments for life on every pair."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Gift cards",
+        "description": "Eye Love Optical Boutique gift cards, available online."
+      }
+    }
+  ],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": "https://squareup.com/appointments/book/pu60wjn6ahmgd9/LJMZQ2MZR4TSC/start",
+    "name": "Book an appointment"
   }
 }
   </script>
@@ -162,6 +213,8 @@
 </head>
 
 <body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWFKBDP" height="0" width="0"
@@ -178,24 +231,26 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#giftcards">Gift Cards</a></li>
           <li><a class="nav-link scrollto" href="#story">Story</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Eyewear</a></li>
           <li><a class="nav-link" href="how-it-works.html">How It Works</a></li>
           <li><a class="nav-link scrollto" href="#appointments">Appointments</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <i class="bi bi-list mobile-nav-toggle" role="button" tabindex="0" aria-label="Open menu" aria-controls="navbar"
+          aria-expanded="false"></i>
       </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <div id="hero" class="home">
+  <section id="hero" class="home" aria-label="Welcome">
     <div class="container">
       <div class="hero-content">
         <h1 class="hero-title"><img src="assets/img/logo-large-bk.png" alt="Eye Love Optical Boutique" class="logo-large"></h1>
-        <h2>Love <span class="typed"
+        <h2 aria-label="Love your frames, your sunglasses, your lenses, the way you look">Love <span class="typed" aria-hidden="true"
             data-typed-items=", your frames, your sunglasses, your lenses, the way you look"></span></h2>
 
         <div class="appointment">
@@ -212,7 +267,7 @@
         </div>
       </div>
     </div>
-  </div><!-- End Hero -->
+  </section><!-- End Hero -->
 
   <main id="main">
 
@@ -313,7 +368,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-pellicer">
             <img src="assets/img/pellicer.jpg" class="img-fluid" alt="Pellicer" width="640" height="480" loading="lazy">
             <div class="portfolio-info">
-              <h4>Pellicer</h4>
+              <h3>Pellicer</h3>
               <p>In 1924, a family legacy began to take shape, spanning over three generations, creating a history
                 filled with passion, learning, and perseverance.</p>
               <a href="assets/img/pellicer.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
@@ -324,7 +379,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-chroma">
             <img src="assets/img/chroma.jpg" class="img-fluid" alt="Chroma" width="640" height="480" loading="lazy">
             <div class="portfolio-info">
-              <h4>Chroma</h4>
+              <h3>Chroma</h3>
               <p>Prepare to make a statement. The Chroma is more than just eyewear – it’s a vibrant expression of
                 individuality.</p>
               <a href="assets/img/chroma.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
@@ -335,7 +390,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-faceaface">
             <img src="assets/img/faceaface.jpg" class="img-fluid" alt="Face a Face" width="640" height="480" loading="lazy">
             <div class="portfolio-info">
-              <h4>Face a Face</h4>
+              <h3>Face a Face</h3>
               <p>Far from standardized fashion, each collection asserts its artistic temperament, drawing its
                 inspiration from the sources of Modern Art, architecture and contemporary design.</p>
               <a href="assets/img/faceaface.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
@@ -346,7 +401,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-bevel">
             <img src="assets/img/bevel.jpg" class="img-fluid" alt="Bevel" width="640" height="480" loading="lazy">
             <div class="portfolio-info">
-              <h4>Bevel</h4>
+              <h3>Bevel</h3>
               <p>Bevel is committed to making eyewear as essential to personal style and self-esteem as apparel or
                 cosmetics.</p>
               <a href="assets/img/bevel.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
@@ -357,7 +412,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-etnia">
             <img src="assets/img/etnia.jpg" class="img-fluid" alt="Etnia Barcelona" width="640" height="480" loading="lazy">
             <div class="portfolio-info">
-              <h4>Etnia Barcelona</h4>
+              <h3>Etnia Barcelona</h3>
               <p>Etnia Barcelona is color, quality, culture. They are Mediterranean, independent and a rebel. They are
                 the city that inspires them: Barcelona.</p>
               <a href="assets/img/etnia.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
@@ -368,7 +423,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-lool">
             <img src="assets/img/lool.jpg" class="img-fluid" alt="Lool" width="640" height="480" loading="lazy">
             <div class="portfolio-info">
-              <h4>Lool</h4>
+              <h3>Lool</h3>
               <p>Looley Eyewear combines sleek architectural design with ultra-light stainless steel frames that are as
                 durable as they are stylish. Each pair is crafted to feel effortless, blending comfort and innovation
                 for everyday wear.</p>
@@ -380,7 +435,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-dutz">
             <img src="assets/img/dutz.jpg" class="img-fluid" alt="Dutz" width="640" height="480" loading="lazy">
             <div class="portfolio-info">
-              <h4>Dutz</h4>
+              <h3>Dutz</h3>
               <p>The Dutz collection targets men &amp; women of all ages. Dutz has paid special attention to those with
                 large and small faces who have difficulty finding a frame that fits.</p>
               <a href="assets/img/dutz.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
@@ -391,7 +446,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-ao">
             <img src="assets/img/ao.jpg" class="img-fluid" alt="American Optical" width="640" height="480" loading="lazy">
             <div class="portfolio-info">
-              <h4>American Optical</h4>
+              <h3>American Optical</h3>
               <p>A true original since 1833. The oldest and greatest optical company in American history has pioneered
                 optical and eyewear innovation for centuries.</p>
               <a href="assets/img/ao.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
@@ -402,7 +457,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-mauijim">
             <img src="assets/img/maui.jpg" class="img-fluid" alt="Maui Jim" width="640" height="480" loading="lazy">
             <div class="portfolio-info">
-              <h4>Maui Jim</h4>
+              <h3>Maui Jim</h3>
               <p>Maui Jim got its start in 1980 as a small company selling sunglasses on the beach in Lahaina, Hawaii.
                 Now a market leader, their revolutionary PolarizedPlus2® lens combat intense glare and harmful UV while
                 bringing the brilliant colors to life.</p>
@@ -459,6 +514,11 @@
             <div class="book-appointment-container">
               <!-- Start Square Appointments Embed Code -->
               <script src="https://square.site/appointments/buyer/widget/pu60wjn6ahmgd9/LJMZQ2MZR4TSC.js"></script>
+              <script>
+                // Square's iframe has no title; name it for screen readers
+                var squareFrame = document.querySelector('.book-appointment-container iframe');
+                if (squareFrame) squareFrame.title = 'Book an appointment with Eye Love Optical Boutique';
+              </script>
               <!-- End Square Appointments Embed Code -->
             </div>
           </div>
@@ -509,7 +569,7 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <div id="footer" class="text-center">
+  <footer id="footer" class="text-center">
     <div class="container">
       <div class="socials-media text-center">
         <ul class="list-unstyled">
@@ -522,7 +582,7 @@
 
       <p>&copy; Eye Love Optical Boutique. All rights reserved.</p>
     </div>
-  </div><!-- End Footer -->
+  </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i
       class="bi bi-arrow-up-short"></i></a>

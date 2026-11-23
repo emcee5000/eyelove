@@ -95,6 +95,22 @@
     },
     {
       "@type": "Question",
+      "name": "Do you carry kids' frames?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We carry frames for kids, fit with the same care as every adult pair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you sell reading glasses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we carry readers, so you can look just as good up close."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "What lens options do you have?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -115,6 +131,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Adjustments are free for life. Just stop by."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until my glasses are ready?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most glasses are ready in about 5 to 7 business days. We'll let you know as soon as yours are in."
       }
     },
     {
@@ -153,6 +177,8 @@
 
 <body>
 
+  <a href="#main" class="skip-link">Skip to main content</a>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWFKBDP" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
@@ -168,13 +194,15 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html#giftcards">Gift Cards</a></li>
           <li><a class="nav-link" href="index.html#story">Story</a></li>
           <li><a class="nav-link" href="index.html#portfolio">Eyewear</a></li>
           <li><a class="nav-link active" href="how-it-works.html">How It Works</a></li>
           <li><a class="nav-link" href="index.html#appointments">Appointments</a></li>
           <li><a class="nav-link" href="index.html#contact">Contact</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <i class="bi bi-list mobile-nav-toggle" role="button" tabindex="0" aria-label="Open menu" aria-controls="navbar"
+          aria-expanded="false"></i>
       </nav><!-- .navbar -->
 
     </div>
@@ -212,14 +240,14 @@
             </div>
 
             <div class="step">
-              <h3>1. Step inside and fall in love</h3>
+              <h2>1. Step inside and fall in love</h2>
               <p>Our collection is hand-selected from the finest independent eyewear houses in the world. Handcrafted
                 frames, made by artisans who obsess over every hinge, finish and curve. You won't find them at the mall, eye doctor's office, or big box store, and you certainly 
                 won't see them on everyone else.</p>
             </div>
 
             <div class="step">
-              <h3>2. Find the one</h3>
+              <h2>2. Find the one</h2>
               <p>This is a true boutique experience. Our opticians and stylists take the time to understand your face,
                 your style and the way you live, then guide you to the pair that feels unmistakably you. No rush, no
                 pressure. Just the joy of finding incredible glasses you'll love.</p>
@@ -232,7 +260,7 @@
             </div>
 
             <div class="step">
-              <h3>3. Bring your prescription</h3>
+              <h2>3. Bring your prescription</h2>
               <p>Bring it with you, or simply tell us who your eye doctor is and we'll contact their office for you.
                 Then we craft it into lenses from the world's leading lens makers, precisely measured and fit by our New
                 York State-licensed opticians to the way you see. Then we finish them with the very best anti-reflective, Transitions® and specialty coatings, so
@@ -246,13 +274,13 @@
             </div>
 
             <div class="step">
-              <h3>4. Insurance, made easy</h3>
+              <h2>4. Insurance, made easy</h2>
               <p>We don't bill insurance directly. Instead, we hand you a detailed, itemized receipt that makes
                 submitting for reimbursement quick and simple.</p>
             </div>
 
             <div class="step">
-              <h3>5. Love them for years</h3>
+              <h2>5. Love them for years</h2>
               <!-- TODO: link "warranty" to warranty details once available -->
               <p>Ask about our various warranties and free adjustments for life! Once you're part of the Eye Love
                 family, we're here whenever you need us.</p>
@@ -316,6 +344,16 @@
             </div>
 
             <div class="faq-item">
+              <h3>Do you carry kids' frames?</h3>
+              <p>Yes. We carry frames for kids, fit with the same care as every adult pair.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>Do you sell reading glasses?</h3>
+              <p>Yes, we carry readers, so you can look just as good up close.</p>
+            </div>
+
+            <div class="faq-item">
               <h3>What lens options do you have?</h3>
               <p>Only the best. Premium lenses from the world's top manufacturers, finished with top-tier
                 anti-reflective, Transitions® and specialty coatings.</p>
@@ -340,12 +378,10 @@
             </div>
             -->
 
-            <!-- TODO: add typical turnaround, then uncomment
             <div class="faq-item">
               <h3>How long until my glasses are ready?</h3>
-              <p>...</p>
+              <p>Most glasses are ready in about 5 to 7 business days. We'll let you know as soon as yours are in.</p>
             </div>
-            -->
 
             <div class="faq-item">
               <h3>Where are you, and when are you open?</h3>
@@ -364,7 +400,7 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <div id="footer" class="text-center">
+  <footer id="footer" class="text-center">
     <div class="container">
       <div class="socials-media text-center">
         <ul class="list-unstyled">
@@ -377,7 +413,7 @@
 
       <p>&copy; Eye Love Optical Boutique. All rights reserved.</p>
     </div>
-  </div><!-- End Footer -->
+  </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i
       class="bi bi-arrow-up-short"></i></a>

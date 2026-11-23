@@ -10,7 +10,7 @@
 --------------------------------------------------------------*/
 body {
   background: #ffffff;
-  color: #898989;
+  color: #666;
   /* font-family: 'Poppins', helvetica; */
   font-size: 18px;
   font-weight: 300;
@@ -54,7 +54,7 @@ p {
   margin: 25px 0;
   padding: 0;
   font-size: 1em;
-  color: #999999;
+  color: #666;
   line-height: 28px;
 }
 
@@ -136,7 +136,7 @@ p a {
   justify-content: center;
   background-color: #f5f5f5;
   border: 1px dashed #ccc;
-  color: #999;
+  color: #666;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -145,7 +145,7 @@ p a {
   margin-bottom: 50px;
 }
 
-.step h3 {
+.step h2 {
   font-size: 24px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -175,7 +175,7 @@ p a {
   background-color: transparent;
   border: 1px solid #999;
   border-radius: 0;
-  color: #999999;
+  color: #666;
   font-size: 12px;
   font-weight: 500;
   height: 50px;
@@ -278,7 +278,7 @@ p a {
 }
 
 #header .logo a {
-  color: #898989;
+  color: #666;
 }
 
 #header .logo img {
@@ -321,7 +321,7 @@ p a {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #7e7d7d;
+  color: #666;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -333,7 +333,7 @@ p a {
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #b8a07e;
+  color: #1d4e89;
 }
 
 .navbar .dropdown ul {
@@ -365,7 +365,7 @@ p a {
 }
 
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #b8a07e;
+  color: #1d4e89;
 }
 
 .navbar .dropdown:hover > ul {
@@ -459,7 +459,7 @@ p a {
 }
 
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: #b8a07e;
+  color: #1d4e89;
 }
 
 .navbar-mobile .getstarted {
@@ -491,7 +491,7 @@ p a {
 }
 
 .navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
-  color: #b8a07e;
+  color: #1d4e89;
 }
 
 .navbar-mobile .dropdown > .dropdown-active {
@@ -755,13 +755,13 @@ p a {
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
-  color: #999999;
+  color: #666;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
 }
 
 #portfolio #portfolio-flters li:hover, #portfolio #portfolio-flters li.filter-active {
-  color: #b8a07e;
+  color: #1d4e89;
 }
 
 #portfolio #portfolio-flters li:last-child {
@@ -784,7 +784,7 @@ p a {
   padding: 15px;
 }
 
-#portfolio .portfolio-item .portfolio-info h4 {
+#portfolio .portfolio-item .portfolio-info h3 {
   font-size: 18px;
   color: #666;
   font-weight: 600;
@@ -792,7 +792,7 @@ p a {
 }
 
 #portfolio .portfolio-item .portfolio-info p {
-  color: #999;
+  color: #666;
   font-size: 14px;
   margin: 0;
   padding: 0;
@@ -1146,7 +1146,7 @@ p a {
 
 .entry-comments span a {
   font-size: 13px;
-  color: #999;
+  color: #666;
 }
 
 .entry-comments-reply {
@@ -1193,7 +1193,7 @@ blockquote {
 
 #footer .socials-media ul li a {
   font-size: 24px;
-  color: #999;
+  color: #666;
   letter-spacing: 0.1em;
   font-weight: 500;
   background: transparent;
@@ -1710,4 +1710,28 @@ blockquote {
     min-height: 2.6em;
     margin-bottom: 24px;
   }
+}
+
+/* Accessibility: skip link, visible keyboard focus */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 10000;
+  padding: 10px 18px;
+  background: #1d4e89;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 12px;
+  color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid #1d4e89;
+  outline-offset: 3px;
 }

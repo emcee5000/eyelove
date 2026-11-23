@@ -117,6 +117,20 @@
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
+    let open = this.classList.contains('bi-x')
+    this.setAttribute('aria-expanded', open)
+    this.setAttribute('aria-label', open ? 'Close menu' : 'Open menu')
+  })
+
+  /**
+   * Let keyboard users activate role="button" elements with Enter or Space
+   */
+  document.addEventListener('keydown', function(e) {
+    let target = e.target.closest && e.target.closest('[role="button"]')
+    if (target && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault()
+      target.click()
+    }
   })
 
   /**
@@ -142,6 +156,8 @@
         let navbarToggle = select('.mobile-nav-toggle')
         navbarToggle.classList.toggle('bi-list')
         navbarToggle.classList.toggle('bi-x')
+        navbarToggle.setAttribute('aria-expanded', 'false')
+        navbarToggle.setAttribute('aria-label', 'Open menu')
       }
       scrollto(this.hash)
     }
@@ -218,13 +234,20 @@
       });
 
       let portfolioFilters = select('#portfolio-flters li', true);
+      portfolioFilters.forEach(function(el) {
+        el.setAttribute('role', 'button');
+        el.setAttribute('tabindex', '0');
+        el.setAttribute('aria-pressed', el.classList.contains('filter-active'));
+      });
 
       on('click', '#portfolio-flters li', function(e) {
         e.preventDefault();
         portfolioFilters.forEach(function(el) {
           el.classList.remove('filter-active');
+          el.setAttribute('aria-pressed', 'false');
         });
         this.classList.add('filter-active');
+        this.setAttribute('aria-pressed', 'true');
 
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
