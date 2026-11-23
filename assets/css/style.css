@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+h1,
 h2 {
   color: #292929;
   font-weight: 600;
@@ -146,13 +147,15 @@ p a {
   margin-bottom: 35px;
 }
 
-.faq-item h4 {
+.faq-item h3 {
   font-size: 21px;
+  color: #292929;
 }
 .section-title {
   margin-bottom: 70px;
 }
 
+.section-title h1,
 .section-title h2 {
   font-size: 25px;
   letter-spacing: 2px;
@@ -1568,5 +1571,70 @@ blockquote {
   .entry-comments-body span {
     display: inline-block;
     margin-right: 0;
+  }
+}
+
+/* Photos placed within page content */
+.page-photo {
+  margin: 0 auto 50px;
+}
+
+.page-photo img {
+  display: block;
+  width: 100%;
+}
+
+.page-photo-tall img {
+  width: auto;
+  max-width: 100%;
+  max-height: 720px;
+  margin: 0 auto;
+}
+
+/* Storefront photo and map stacked in the right column of Get in Touch */
+.contact-media {
+  margin-bottom: 20px;
+}
+
+.contact-media img {
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  .contact-media:first-child {
+    margin-top: 30px;
+  }
+}
+
+/* Home page logo doubles as the page's main heading */
+.hero-title {
+  margin: 0;
+  line-height: 1;
+}
+
+/* Comfortable tap targets on phones for the links people tap most */
+@media (max-width: 767px) {
+  .list-social a,
+  .socials-media a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .contact-details a {
+    display: inline-block;
+    padding: 10px 0;
+  }
+}
+
+/* Let buttons grow to fit wrapped text on phones instead of spilling out */
+@media (max-width: 767px) {
+  .btn {
+    height: auto;
+    line-height: 1.4;
+    padding: 14px 28px;
+    white-space: normal;
   }
 }

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /archives/
+Disallow: /forms/
+
+Sitemap: https://eyeloveboutique.com/sitemap.xml
