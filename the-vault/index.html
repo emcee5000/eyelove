@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vault - World's Most Exclusive Eyewear Drops Each Week</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="css/global.css" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/2.png" class="logo" alt="The Vault - World's Most Exclusive Eyewear Drops Each Week">
+                </div>
+                <div class="vault-status" id="vaultStatus">Vault Closed</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Countdown Section -->
+        <div class="countdown-section" id="countdownSection">
+            <div class="countdown-label" id="countdownLabel">Vault Opens In</div>
+            <div class="countdown-timer" id="countdownTimer">
+                <div class="time-unit">
+                    <span class="time-value" id="days">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="hours">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="minutes">00</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="seconds">00</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vault Closed State -->
+        <div class="vault-closed" id="vaultClosed">
+            <h1 class="closed-title">The Vault Is Locked</h1>
+            <p class="closed-message">10 exceptional frames. One weekly drop. Zero compromises.</p>
+            
+            <!-- Previous Collection Teaser -->
+            <div class="teaser-gallery">
+                <div class="teaser-grid">
+                    <div class="teaser-image">
+                        <img src="images/u1877147155_hyper_realistic_close_up_of_a_young_attractive_woma_2d01f18e-e531-4702-ac74-ae805b284014 Medium.jpeg" alt="Previous collection">
+                        <div class="teaser-overlay"></div>
+                    </div>
+                    <div class="teaser-image">
+                        <img src="images/u1877147155_hyper_realistic_medium_shot_up_of_a_young_attract_53df7563-eb07-4a6b-8a34-ebeaeaef4f21_1 Medium.jpeg" alt="Previous collection">
+                        <div class="teaser-overlay"></div>
+                    </div>
+                    <div class="teaser-image">
+                        <img src="images/u1877147155_hyper_realistic_medium_shot_up_of_a_young_attract_f2675844-6f16-4b7f-a1e9-7aba51d8cb69_3 Medium.jpeg" alt="Previous collection">
+                        <div class="teaser-overlay"></div>
+                    </div>
+                    <div class="teaser-image">
+                        <img src="images/u1877147155_close_up_of_a_young_attractive_woman_wearing_incr_d615055b-df9b-4304-89e7-a15de94f3b03_1 Medium.jpeg" alt="Previous collection">
+                        <div class="teaser-overlay"></div>
+                    </div>
+                    
+                </div>
+                <p class="teaser-caption">Last week's drop—Sold out in 4 hours</p>
+            </div>
+            
+            <div class="email-signup">
+                <h3 class="signup-title">Get 10-Minute Early Access</h3>
+                <p style="margin-bottom: 20px; color: #666; font-size: 14px;">Join 2,847 insiders who never miss a drop</p>
+                <form class="signup-form" id="signupForm">
+                    <input type="email" class="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="submit-button">Get Access</button>
+                </form>
+                <div class="success-message" id="successMessage">✓ You're in. Check your email for early access details.</div>
+            </div>
+        </div>
+
+        <!-- Vault Open State -->
+        <div class="hidden" id="vaultOpen">
+            <!-- Hero Product -->
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=800&q=80" alt="Architect Frames">
+                    </div>
+                    <div class="hero-details">
+                        <h2 class="hero-title">Architect</h2>
+                        <div class="hero-price">$425</div>
+                        <div class="stock-indicator">Only 5 left—Moving fast</div>
+                        <p style="margin-bottom: 30px; color: #666; line-height: 1.8;">Precision-milled titanium meets Japanese minimalism. Featherlight at 18g. Hand-finished temples with micro-adjustable fit. This is the frame architects have been designing in their heads.</p>
+                        <button class="cta-button">Secure Yours Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Collection Grid -->
+            <section class="collection">
+                <h2 class="section-title">This Week's Drop—10 Frames Only</h2>
+                <div class="grid" id="productGrid">
+                    <!-- Products will be inserted by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Viewing Notification -->
+    <div class="viewing-notification" id="viewingNotification">
+        <span id="viewerCount">12</span> people viewing
+    </div>
+
+    <script>
+        // ============================================
+        // CONFIGURATION - Easy to edit
+        // ============================================
+        const vaultConfig = {
+            isOpen: open,  // Set to true to open the vault
+            nextDropDate: "2026-02-13T18:00:00",  // When vault opens
+            closingTime: "2026-02-13T23:59:59"    // When vault closes (if open)
+        };
+
+        // Product data
+        const products = [
+            { name: "Nocturne", price: 385, stock: 3, image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&q=80" },
+            { name: "Meridian", price: 445, stock: 8, image: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=600&q=80" },
+            { name: "Atelier", price: 395, stock: 0, image: "https://images.unsplash.com/photo-1577803645773-f96470509666?w=600&q=80" },
+            { name: "Skyline", price: 410, stock: 12, image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=600&q=80" },
+            { name: "Canvas", price: 365, stock: 2, image: "https://images.unsplash.com/photo-1614715838608-dd527c46231d?w=600&q=80" },
+            { name: "Ellipse", price: 430, stock: 10, image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80" },
+            { name: "Prism", price: 455, stock: 1, image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80" },
+            { name: "Studio", price: 375, stock: 0, image: "https://images.unsplash.com/photo-1588073960812-d8ba736abcbe?w=600&q=80" },
+            { name: "Horizon", price: 420, stock: 5, image: "https://images.unsplash.com/photo-1608499644162-e0b56e08b3c8?w=600&q=80" }
+        ];
+
+        // ============================================
+        // STATE MANAGEMENT
+        // ============================================
+        function updateVaultState() {
+            const vaultStatus = document.getElementById('vaultStatus');
+            const vaultClosed = document.getElementById('vaultClosed');
+            const vaultOpen = document.getElementById('vaultOpen');
+            const countdownLabel = document.getElementById('countdownLabel');
+
+            if (vaultConfig.isOpen) {
+                vaultStatus.textContent = 'Vault Open';
+                vaultStatus.style.color = 'var(--gold)';
+                vaultClosed.classList.add('hidden');
+                vaultOpen.classList.remove('hidden');
+                countdownLabel.textContent = 'Vault Closes In';
+                startViewingNotifications();
+            } else {
+                vaultStatus.textContent = 'Vault Closed';
+                vaultStatus.style.color = '#999';
+                vaultClosed.classList.remove('hidden');
+                vaultOpen.classList.add('hidden');
+                countdownLabel.textContent = 'Vault Opens In';
+            }
+        }
+
+        // ============================================
+        // COUNTDOWN TIMER
+        // ============================================
+        function updateCountdown() {
+            const targetDate = vaultConfig.isOpen 
+                ? new Date(vaultConfig.closingTime)
+                : new Date(vaultConfig.nextDropDate);
+            
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        // ============================================
+        // PRODUCT GRID
+        // ============================================
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = `product-card ${product.stock === 0 ? 'sold-out' : ''}`;
+                
+                card.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="sold-out-overlay ${product.stock === 0 ? 'active' : ''}">
+                            <span class="sold-out-text">Sold Out</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-price">$${product.price}</div>
+                        ${product.stock > 0 ? `<div class="product-stock">${product.stock} remaining</div>` : ''}
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // ============================================
+        // VIEWING NOTIFICATIONS
+        // ============================================
+        function startViewingNotifications() {
+            if (!vaultConfig.isOpen) return;
+
+            setInterval(() => {
+                const notification = document.getElementById('viewingNotification');
+                const viewerCount = document.getElementById('viewerCount');
+                
+                // Random viewer count between 8-20
+                const count = Math.floor(Math.random() * 13) + 8;
+                viewerCount.textContent = count;
+                
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 4000);
+            }, 15000); // Show every 15 seconds
+        }
+
+        // ============================================
+        // EMAIL SIGNUP
+        // ============================================
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            this.reset();
+            
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        });
+
+        // ============================================
+        // INITIALIZE
+        // ============================================
+        updateVaultState();
+        renderProducts();
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

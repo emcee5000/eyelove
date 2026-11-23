@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vault Timer Embed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: transparent;
+        }
+
+        .vault-timer-embed {
+            background: linear-gradient(135deg, #1a3a2e 0%, #2a2a2a 100%);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            color: #f8f8f6;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .vault-logo-small {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .vault-logo-small .italic {
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        .timer-status {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #c9a961;
+            margin-bottom: 25px;
+        }
+
+        .countdown-display {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: rgba(248, 248, 246, 0.1);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            border-radius: 8px;
+            padding: 15px 12px;
+            min-width: 80px;
+            backdrop-filter: blur(10px);
+        }
+
+        .time-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #c9a961;
+            display: block;
+            line-height: 1;
+        }
+
+        .time-text {
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #f8f8f6;
+            margin-top: 8px;
+            opacity: 0.8;
+        }
+
+        .timer-message {
+            font-size: 13px;
+            line-height: 1.6;
+            color: rgba(248, 248, 246, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .timer-cta {
+            display: inline-block;
+            background: #c9a961;
+            color: #2a2a2a;
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .timer-cta:hover {
+            background: #d4b574;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+        }
+
+        /* Compact Version */
+        .vault-timer-embed.compact {
+            padding: 20px 15px;
+        }
+
+        .vault-timer-embed.compact .vault-logo-small {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .vault-timer-embed.compact .countdown-display {
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .vault-timer-embed.compact .time-box {
+            padding: 10px 8px;
+            min-width: 65px;
+        }
+
+        .vault-timer-embed.compact .time-number {
+            font-size: 28px;
+        }
+
+        .vault-timer-embed.compact .timer-message {
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            .countdown-display {
+                gap: 8px;
+            }
+
+            .time-box {
+                min-width: 70px;
+                padding: 12px 8px;
+            }
+
+            .time-number {
+                font-size: 30px;
+            }
+
+            .time-text {
+                font-size: 9px;
+            }
+        }
+
+        /* Vault Open State */
+        .vault-timer-embed.vault-open {
+            background: linear-gradient(135deg, #c9a961 0%, #d4b574 100%);
+        }
+
+        .vault-timer-embed.vault-open .timer-status {
+            color: #2a2a2a;
+        }
+
+        .vault-timer-embed.vault-open .time-number {
+            color: #2a2a2a;
+        }
+
+        .vault-timer-embed.vault-open .timer-cta {
+            background: #2a2a2a;
+            color: #f8f8f6;
+        }
+
+        .vault-timer-embed.vault-open .timer-cta:hover {
+            background: #1a3a2e;
+        }
+    </style>
+</head>
+<body>
+    <!-- STANDARD EMBED VERSION -->
+    <div class="vault-timer-embed" id="vaultTimer">
+        <div class="vault-logo-small">
+            <span class="italic">The</span> Vault
+        </div>
+        <div class="timer-status" id="timerStatus">Vault Opens In</div>
+        <div class="countdown-display">
+            <div class="time-box">
+                <span class="time-number" id="embedDays">00</span>
+                <span class="time-text">Days</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="embedHours">00</span>
+                <span class="time-text">Hours</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="embedMinutes">00</span>
+                <span class="time-text">Minutes</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="embedSeconds">00</span>
+                <span class="time-text">Seconds</span>
+            </div>
+        </div>
+        <div class="timer-message" id="timerMessage">
+            10 exclusive frames drop weekly. Be ready.
+        </div>
+        <a href="https://yourvaultsite.com" class="timer-cta" id="timerCTA">Get Early Access</a>
+    </div>
+
+    <script>
+        // ============================================
+        // CONFIGURATION
+        // ============================================
+        const embedConfig = {
+            isOpen: true,  // Vault open/closed state
+            nextDropDate: "2026-02-13T18:00:00",  // Next drop time
+            closingTime: "2026-02-13T23:59:59",   // When vault closes (if open)
+            vaultURL: "https://yourvaultsite.com",  // Your main vault page
+            closedMessage: "10 exclusive frames drop weekly. Be ready.",
+            openMessage: "The Vault is OPEN! Shop now before they're gone.",
+            closedCTA: "Get Early Access",
+            openCTA: "Shop The Drop Now"
+        };
+
+        // ============================================
+        // UPDATE TIMER
+        // ============================================
+        function updateEmbedTimer() {
+            // Determine which date to count down to
+            const targetDate = embedConfig.isOpen 
+                ? new Date(embedConfig.closingTime)
+                : new Date(embedConfig.nextDropDate);
+            
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('embedDays').textContent = '00';
+                document.getElementById('embedHours').textContent = '00';
+                document.getElementById('embedMinutes').textContent = '00';
+                document.getElementById('embedSeconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('embedDays').textContent = String(days).padStart(2, '0');
+            document.getElementById('embedHours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('embedMinutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('embedSeconds').textContent = String(seconds).padStart(2, '0');
+
+            // Update UI based on vault state
+            const timerElement = document.getElementById('vaultTimer');
+            if (embedConfig.isOpen) {
+                timerElement.classList.add('vault-open');
+                document.getElementById('timerStatus').textContent = 'Vault Closes In';
+                document.getElementById('timerMessage').textContent = embedConfig.openMessage;
+                document.getElementById('timerCTA').textContent = embedConfig.openCTA;
+            } else {
+                timerElement.classList.remove('vault-open');
+                document.getElementById('timerStatus').textContent = 'Vault Opens In';
+                document.getElementById('timerMessage').textContent = embedConfig.closedMessage;
+                document.getElementById('timerCTA').textContent = embedConfig.closedCTA;
+            }
+        }
+
+        // Update CTA link
+        document.getElementById('timerCTA').href = embedConfig.vaultURL;
+
+        // Initialize and start countdown
+        updateEmbedTimer();
+        setInterval(updateEmbedTimer, 1000);
+    </script>
+</body>
+</html>
+
+<!-- 
+============================================
+EMBED INSTRUCTIONS
+============================================
+
+TO EMBED THIS TIMER ON ANY WEBSITE, USE ONE OF THESE METHODS:
+
+METHOD 1: IFRAME EMBED (Easiest)
+-----------------------------------
+<iframe 
+    src="https://yoursite.com/vault-timer.html" 
+    width="100%" 
+    height="300" 
+    frameborder="0" 
+    scrolling="no"
+    style="max-width: 600px; margin: 0 auto; display: block;">
+</iframe>
+
+METHOD 2: COMPACT VERSION
+-----------------------------------
+Add class "compact" to the main div for smaller size:
+<div class="vault-timer-embed compact" id="vaultTimer">
+
+Then adjust iframe height to 220px:
+<iframe height="220" ...>
+
+METHOD 3: DIRECT EMBED (Advanced)
+-----------------------------------
+Copy the entire <div class="vault-timer-embed">...</div> 
+and the <script> section into your page.
+Also copy the <style> section to your CSS file.
+
+CONFIGURATION:
+-----------------------------------
+Edit these values in the JavaScript:
+
+embedConfig = {
+    isOpen: false,                          // true when vault opens
+    nextDropDate: "2026-02-13T18:00:00",   // When vault opens
+    closingTime: "2026-02-13T23:59:59",    // When vault closes
+    vaultURL: "https://yourvaultsite.com",  // Your vault page
+    closedMessage: "Your message here",
+    openMessage: "Vault is open message",
+    closedCTA: "Button text closed",
+    openCTA: "Button text open"
+};
+
+BEHAVIOR:
+-----------------------------------
+When isOpen: false
+- Counts down to nextDropDate (opening time)
+- Shows "Vault Opens In"
+- Dark green/charcoal styling
+- Displays closedMessage
+
+When isOpen: true
+- Counts down to closingTime (closing time)
+- Shows "Vault Closes In"
+- Gold styling (urgency)
+- Displays openMessage
+
+WORDPRESS:
+-----------------------------------
+1. Upload vault-timer.html to your WordPress media library or hosting
+2. Add an HTML block to your page
+3. Paste the iframe code above with your file URL
+
+SHOPIFY:
+-----------------------------------
+1. Upload to Shopify Files
+2. Add a Custom HTML section to your theme
+3. Paste the iframe code
+
+============================================
+-->. 
