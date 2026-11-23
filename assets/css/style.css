@@ -502,17 +502,35 @@ p a {
 # Hero
 --------------------------------------------------------------*/
 #hero {
-  background: url("../img/home-bg-3.jpg") repeat scroll center center/cover;
+  background: url("../img/home-bg-3.jpg") no-repeat scroll center center/cover;
   height: 100vh;
   width: 100%;
+  position: relative;
+}
+
+/* Soft white glow over the photo, strongest behind the logo, so the black
+   logo and text stand out while the photo still shows at the edges */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 255, 255, 0.62) 45%,
+      rgba(255, 255, 255, 0.28) 100%);
+}
+
+#hero .container {
+  position: relative;
 }
 
 #hero .hero-content {
   height: 100vh;
-  text-align: left;
+  text-align: center;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -527,7 +545,9 @@ p a {
 .hero-content h2 {
   font-size: 30px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+  min-height: 1.2em;
+  letter-spacing: 1px;
   text-transform: uppercase;
   /* color: #fff; */
   color: #000;
@@ -550,9 +570,10 @@ p a {
   font-weight: 500;
 }
 
-.hero-content .list-social li {
-  float: left;
-  margin-right: 20px;
+.hero-content .list-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .hero-content .list-social li i {
@@ -1619,6 +1640,7 @@ blockquote {
 .hero-title {
   margin: 0;
   line-height: 1;
+  width: 100%;
 }
 
 /* Comfortable tap targets on phones for the links people tap most */
@@ -1673,5 +1695,19 @@ blockquote {
 
   .book-appointment-container {
     height: 760px;
+  }
+}
+
+/* Home banner on phones: bigger logo, tagline sized to fit, steady height */
+@media (max-width: 767px) {
+  .logo-large {
+    width: 80%;
+    margin: 0 0 2em 0;
+  }
+
+  .hero-content h2 {
+    font-size: 22px;
+    min-height: 2.6em;
+    margin-bottom: 24px;
   }
 }
